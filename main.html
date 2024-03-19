@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Авито отзывы</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+   <link rel="icon" href="data:image/png;base64,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" type="image/x-icon">
+ <style>
+  
+    .col-6 {
+      flex: 0 0 50%;
+      max-width: 50%;
+      padding: 0 1rem;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-muted {
+      color: #555;
+      font-size: 0.75rem;
+    }
+
+    /* Image */
+    .img-fluid {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Text */
+    h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 1.5rem;
+      line-height: 1.5;
+    }
+
+    /* Buttons */
+
+
+    header {
+      height: 350px;  /* Увеличена высота header */
+      background-color: black;
+      text-align: center;
+    }
+
+    .position-relative {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .img-fluid {
+      max-width: 40px; /* Ensure image responsiveness */
+      height: 40px;
+    }
+
+    /* Position image above h1 using z-index */
+    img {
+      position: relative;
+      z-index: 2;
+    }
+    .col-md-4 {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.card-img-top {
+    display: block;
+    margin: 0 auto;
+}
+
+    
+
+    /* Уменьшение шрифта и отступов для маленьких экранов */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      header .row {
+        padding: 1rem;
+      }
+    }
+
+    
+    @media (max-width: 768px) {
+      .h1,
+      .h2 {
+        font-size: 1.5rem;
+      }
+    }
+    .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+
+  .col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 1rem;
+  }
+
+  .col-md-4 {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.card-img-top {
+  display: block;
+  margin: 0 auto;
+}
+}
+
+@media (max-width: 768px) {
+  .col-md-6 {
+    width: 50%;
+  }
+}
+
+
+
+.footer {
+  background-color: #222;
+  color: #fff;
+  padding: 40px 0;
+}
+
+.footer .container {
+  max-width: 1140px;
+}
+
+.footer h3 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.footer p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #aaa;
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-list li {
+  margin-bottom: 10px;
+}
+
+.footer-list a {
+  color: #aaa;
+  text-decoration: none;
+}
+
+.footer-list a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.social-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.social-list li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social-list a {
+  color: #aaa;
+  font-size: 18px;
+}
+
+.social-list a:hover {
+  color: #fff;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 20px;
+  color: #aaa;
+}
+
+@media (max-width: 768px) {
+  .footer .col-md-4,
+  .footer .col-sm-6 {
+    width: 100%;
+  }
+}
+
+.btn-custom {
+      background-color: rgb(195, 19, 19);
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      padding: 10px 20px; /* Уменьшаем отступы */
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px; /* Уменьшаем размер шрифта */
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      outline: none;
+    }
+
+    .btn-custom:hover {
+      background-color: #fff;
+      color: rgb(195, 19, 19);
+    }
+
+    @media (max-width: 576px) {
+    /* Общие стили */
+    h1.display-4 {
+        font-size: 1.5rem; /* Уменьшаем размер заголовка */
+    }
+
+    .btn {
+        font-size: 0.8rem; /* Уменьшаем размер шрифта кнопок */
+    }
+
+    /* Дополнительные стили для кнопок */
+    .btn-success, .btn-info {
+        margin-top: 10px; /* Добавляем отступ сверху для кнопок регистрации и авторизации */
+    }
+}
+
+
+@media (max-width: 576px) {
+    #specific-container .row {
+        flex-direction: column;
+        align-items: center;
+        padding-left: 0; /* Убрать отступ слева */
+        padding-right: 0; /* Убрать отступ справа */
+    }
+
+    #specific-container .col-6 {
+        width: 100%;
+        margin: 0; /* Remove margins on both sides */
+        padding-left: 0; /* Убрать отступ слева */
+        padding-right: 0; /* Убрать отступ справа */
+    }
+
+    #specific-container h1 {
+        font-size: 1.8rem;
+        text-align: left; /* Align header text to the left */
+    }
+
+    #specific-container p {
+        font-size: 1.2rem;
+        margin: 0; /* Remove margins on both sides */
+        text-align: justify; /* Justify text */
+    }
+
+    #specific-container img {
+        display: none;
+    }
+}
+@media (max-width: 768px) {
+  .team-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  .team-section .col-md-4 {
+    padding-top: 35px;
+    width: 80%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .feedback-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  .feedback-section .col-md-6 {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+  
+ 
+
+
+
+<header class="container-fluid py-4">
+    <div class="row justify-content-between align-items-center h-100">
+        <div class="col-md-12">
+            <div class="position-relative text-center">
+                <img src="data:image/png;base64,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" class="img-fluid" alt="Revamp Your Reputation">
+                <h1 class="display-4" style="color: yellow; font-weight: 900;">Повысьте свой </h1>
+                <h1 class="display-4" style="color: yellow; font-weight: 900;">Бизнес с нами</h1>
+                <div class="d-flex justify-content-end mt-4">
+                    <a href="#my-anchor" class="btn btn-primary m-2">Начать</a>
+                    <a href="https://t.me/GlimmerWork" class="btn btn-secondary m-2" style="background-color: red;">Узнать больше</a>
+                    <button type="button" class="btn btn-info m-2" onclick="redirectToClientPage()">Аккаунт</button>
+                </div>
+            </div>
+        </div>
+        <div class="ml-auto" style="margin-top: -570px; margin-right: 20px;">
+                <button type="button" class="btn btn-success" onclick="re()">Регистрации</button>
+                <button type="button"  class="btn btn-info" onclick="reee()">Войти</button>
+        </div>
+    </div>
+</header>
+
+<div id="specific-container">
+<div class="container" style="width: 100%; max-width: 1200px; margin: 0 auto; margin-bottom: 40px; margin-top: 50px; ">
+  <div class="row" style="display: flex; flex-wrap: wrap;">
+      <div class="col-6">
+          <h1>Восстановите свою репутацию</h1>
+          <p>Увеличьте свои продажи с помощью нашей магии повышения отзывов! Наши опытные писцы создают отзывы высшего уровня, разработанные специально для того, чтобы избежать "красных флажков" и блокировок аккаунтов.Мы быстро завершаем нашу работу в установленные сроки.</p>
+          <p class="text-muted">С нами ваши секреты в безопасности.</p>
+      </div>
+      <div class="col-6">
+          <img src="https://img.freepik.com/free-vector/global-business-growth-with-upward-arrow-on-world-map-vector_1017-47517.jpg?size=626&ext=jpg&ga=GA1.1.237254037.1707299458&semt=ais" alt="Изображение" style="width: 80%; max-width: 100%; margin-left: 50px; height: 90%; max-height: 100%; margin-top: -20px">
+      </div>
+  </div>
+</div>
+</div>
+
+
+<div style="background-color: rgb(31, 28, 28);">
+  <div class="container">
+    <div class="row justify-content-center ">
+      <div class="col-12" style="margin-bottom:0px;">
+        <div class="card" style="background-color: rgb(31, 28, 28); border: none; min-width: 100%;height: 400px;padding-top: 70px; ">
+          <div class="card-header" style="text-align: center; color: white;">
+            <h1 class="card-title yr" style="margin-top: -30px;">Our Team</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row team-section" style="display: flex; flex-wrap: wrap; padding-bottom: 50px; margin-top: -180px; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.161);">
+      <div class="col-md-4" style="border-radius: 16px; margin-bottom: 20px;">
+        <div class="card text-center" style="border-radius: 10%; min-width: 100%; height: 400px; padding-top: 60px; background-color: rgb(0, 0, 0); color: white; margin-top: -40px;">
+          <img class="card-img-top rounded-circle" src="/static/каккк.png" alt="Картинка" style="width: 150px;height: 150px;">
+          <div class="card-body">
+            <h5 class="card-title"><a href="https://web.telegram.org/k/#@kamilllaga">Камила</a></h5>
+            <p class="card-text">Менеджер</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" style="border-radius: 16px; margin-bottom: 20px;">
+        <div class="card text-center" style="border-radius: 10%; min-width: 100%; height: 400px; padding-top: 60px; background-color: rgb(0, 0, 0); color: white; margin-top: -40px;">
+          <img class="card-img-top rounded-circle" src="static/ами.jpg" alt="Картинка" style="width: 150px;height: 150px;">
+          <div class="card-body">
+            <h5 class="card-title"><a href="https://web.telegram.org/k/#@Ms_Amino4ka">Амина</a></h5>
+            <p class="card-text">Администратор</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" style="border-radius: 16px; margin-bottom: 20px;">
+        <div class="card text-center" style="border-radius: 10%; min-width: 100%; height: 400px; padding-top: 60px; background-color: rgb(0, 0, 0); color: white; margin-top: -40px;">
+          <img class="card-img-top rounded-circle" src="/static/sup.png" alt="Картинка" style="width: 150px;height: 150px;">
+          <div class="card-body">
+            <h5 class="card-title"><a href="https://web.telegram.org/k/#@avitomanag">Стас</a></h5>
+            <p class="card-text">Служба поддержки</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="container"  id="">
+  <div class="row d-flex feedback-section" style="padding-top: 25px;">
+    <div class="col-md-6 col-lg-3 mb-4">
+      <div class="card" style="box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.25); border-radius: 16px; height: 100%;">
+        <div class="card-body">
+          <h3 class="card-title">Положительный отзыв</h3>
+          <p class="card-text">200 руб</p>
+          <ul class="list-unstyled">
+            <li class="check-circle">✓ Лидеры в своём деле</li>
+            <li class="check-circle">✓ Лучшие отзывы</li>
+            <li class="check-circle">✓ Высокое качество</li>
+          </ul>
+          <p class="card-text">1 отзыв</p>
+          <a href="#" id="my-anchor" onclick="sr()" class="btn btn-custom btn-block" style="background-color: rgb(195, 19, 19); ">Заказать</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-3 mb-4">
+      <div class="card" style="box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.25); border-radius: 16px;">
+        <div class="card-body">
+          <h3 class="card-title">Положительный отзыв</h3>
+          <p class="card-text">899 руб</p>
+          <ul class="list-unstyled">
+            <li class="check-circle">✓ Гарантия 7 дней</li>
+            <li class="check-circle">✓ Выгода 10%</li>
+            <li class="check-circle">✓ Высокое качество</li>
+          </ul>
+          <p class="card-text">5 отзывов</p>
+          <a href="#" onclick="sr2()" class="btn btn-custom btn-block" style="background-color: rgb(195, 19, 19);">Заказать</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-3 mb-4">
+      <div class="card" style="box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.25); border-radius: 16px;">
+        <div class="card-body">
+          <h3 class="card-title">Положительный отзыв</h3>
+          <p class="card-text">1699 руб</p>
+          <ul class="list-unstyled">
+            <li class="check-circle">✓ Гарантия 14 дней</li>
+            <li class="check-circle">✓ Выгода 20%</li>
+            <li class="check-circle">✓ Высокое качество</li>
+          </ul>
+          <p class="card-text">10 отзывов</p>
+          <a href="#" onclick="sr3()" class="btn btn-custom btn-block" style="background-color: rgb(195, 19, 19);">Заказать</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-3 mb-4">
+      <div class="card" style="box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.25); border-radius: 16px;">
+        <div class="card-body">
+          <h3 class="card-title">Положительный отзыв</h3>
+          <p class="card-text">3199 руб</p>
+          <ul class="list-unstyled">
+            <li class="check-circle">✓ Гарантия 30 дней</li>
+            <li class="check-circle">✓ Выгода 30%</li>
+            <li class="check-circle">✓ Высокое качество</li>
+          </ul>
+          <p class="card-text">20 отзывов</p>
+          <a href="#" onclick="sr4()" class="btn btn-custom btn-block" style="background-color: rgb(195, 19, 19);">Заказать</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div style="background-color: #222;">
+  <div class="container" >
+    <div class="row d-flex feedback-section " style="padding-top: 25px;">
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card" style="box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.25); border-radius: 16px; height: 100%;">
+          <div class="card-body">
+            <h3 class="card-title">Отрицательный отзыв</h3>
+            <p class="card-text">250 руб</p>
+            <ul class="list-unstyled">
+              <li class="check-circle">✓ Лидеры в своём деле</li>
+              <li class="check-circle">✓ Лучшие отзывы</li>
+              <li class="check-circle">✓ Высокое качество</li>
+            </ul>
+            <p class="card-text">1 отзыв</p>
+            <a href="#" onclick="sr5()" class="btn btn-custom btn-block" style="background-color: rgb(195, 19, 19);  ">Заказать</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card" style="box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.25); border-radius: 16px;">
+          <div class="card-body">
+            <h3 class="card-title">Отрицательный отзыв</h3>
+            <p class="card-text">1099 руб</p>
+            <ul class="list-unstyled">
+              <li class="check-circle">✓ Гарантия 7 дней</li>
+              <li class="check-circle">✓ Выгода 10%</li>
+              <li class="check-circle">✓ Высокое качество</li>
+            </ul>
+            <p class="card-text">5 отзывов</p>
+            <a href="#" onclick="sr6()" class="btn btn-custom btn-block" style="background-color: rgb(195, 19, 19);">Заказать</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card" style="box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.25); border-radius: 16px;">
+          <div class="card-body">
+            <h3 class="card-title">Отрицательный отзыв</h3>
+            <p class="card-text">1999 руб</p>
+            <ul class="list-unstyled">
+              <li class="check-circle">✓ Гарантия 14 дней</li>
+              <li class="check-circle">✓ Выгода 20%</li>
+              <li class="check-circle">✓ Высокое качество</li>
+            </ul>
+            <p class="card-text">10 отзывов</p>
+            <a href="#" onclick="sr7()" class="btn btn-custom btn-block" style="background-color: rgb(195, 19, 19);">Заказать</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card" style="box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.25); border-radius: 16px;">
+          <div class="card-body">
+            <h3 class="card-title">Отрицательный отзыв</h3>
+            <p class="card-text">3699 руб</p>
+            <ul class="list-unstyled">
+              <li class="check-circle">✓ Гарантия 30 дней</li>
+              <li class="check-circle">✓ Выгода 30%</li>
+              <li class="check-circle">✓ Высокое качество</li>
+            </ul>
+            <p class="card-text">20 отзывов</p>
+            <a href="#" onclick="sr8()" class="btn btn-custom btn-block" style="background-color: rgb(195, 19, 19);">Заказать</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <div style="background-color: rgb(255, 255, 255);">
+  <div class="container-fluid" >
+    <div class="row justify-content-center" >
+      <div class="col-md-6 col-sm-10 col-12"> 
+        <div class="card border-0 text-center text-black" >
+          <div class="card-body d-flex flex-column justify-content-center" style="background-color: rgb(255, 255, 255);">
+            <h1 class="card-title">Присоединяйтесь к нам</h1>
+            <p class="card-text mt-4">
+              Добро пожаловать в мир высококачественных отзывов! Мы - компания, специализирующаяся на создании официальных и подлинных отзывов, подчеркивающих превосходство вашего продукта или услуги. Наша миссия - поддержать ваш бренд, сделав его великолепие доступным для каждого клиента.           
+            </p>
+            <div class="mt-4">
+              <a href="https://t.me/GlimmerWork" class="btn btn-primary text-white bg-danger">Присоединяйтесь к нам</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-sm-6">
+          <h3 class="footer-title">О нас</h3>
+          <p>Сотрудничая с нами, вы получаете не просто отзывы - вы получаете инструмент, который помогает укрепить ваш бренд, привлечь новых клиентов и повысить уровень доверия ваших потребителей. Доверьтесь нам, и ваш бизнес засияет в лучшем свете!</p>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <h3 class="footer-title">Контакты</h3>
+          <ul class="footer-list">
+            <li><a href="#">Telegram: @avitomanag</a></li>
+            <li><a href="#">г. Москва, ул. Ленина, 1</a></li>
+          </ul>
+        </div>
+        
+      </div>
+      <hr>
+      <div class="copyright">
+        © 2024 Все права защищены.
+      </div>
+    </div>
+  </footer>
+  <script>
+    function redirectToClientPage() {
+            // Переходим на страницу /client
+            window.location.href = "/client";
+        }
+        function re() {
+            // Переходим на страницу /client
+            window.location.href = "/register";
+        }
+        function reee() {
+            // Переходим на страницу /client
+            window.location.href = "/login";
+        }
+        function sr(){
+          alert("Зарегистрируйтесь или Войдите в аккаунт")
+        }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>  
+</html>
+
+
+
+
+
+
